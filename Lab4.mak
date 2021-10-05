@@ -1,3 +1,4 @@
+//compiles all 5 relevant files, turns it into an executable, then runs it.
 all:
 	g++ -c node.cpp
 	g++ -c node.h
