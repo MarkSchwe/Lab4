@@ -1,3 +1,4 @@
+//header file that contains all the relevent functions and values.
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 #include "node.h"
