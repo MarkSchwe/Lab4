@@ -1,12 +1,12 @@
 #include "LinkedList.h"
 #include "node.h"
 #include <iostream>
-
+//constructor that sets the head as nullpointer
 LinkedList::LinkedList(){
     listHead = nullptr;
 }
 
-
+//Destructor that deletes all elements of the list
 LinkedList::~LinkedList(){
 Node *currNode = new Node();
 while(listHead->Next != nullptr){
@@ -18,14 +18,14 @@ while(listHead->Next != nullptr){
 }
 }
 
-
+//creates a node, initializes it to be the return value of createNode, and sets that as the given ID number
 void LinkedList::insertNode(){
 Node *A = createNode();
-//A->Next = searchLocation(A->idNumber)->Next;
-//searchLocation(A->idNumber)->Next = A;
+A->Next = searchLocation(A->idNumber)->Next;
+searchLocation(A->idNumber)->Next = A;
 }
 
-
+//Deletes the node that has the ID that corresponds to ID
 void LinkedList::deleteNode(int ID){
 Node *delNode = new Node();
 if (searchLocation(ID) == nullptr){
@@ -38,6 +38,7 @@ delete delNode;
 }
 }
 
+//prints all elements of  the linkedlist
 void LinkedList::printList(){
 Node *currNode =  listHead->Next;
 while (currNode != nullptr){
@@ -46,6 +47,7 @@ currNode = currNode->Next;
 }
 }
 
+//searches the linkedlist for a node with the specific ID given by the keyboard
 void LinkedList::searchNode(){
 int ID;
 cout << "Input ID of student to search: ";
@@ -57,6 +59,7 @@ searchLocation(ID)->printNode();
 }
 }
 
+//creates a node and returns a pointer to said node
 Node *LinkedList::createNode(){
 Node *newNode = new Node();
 cout << "Input First Name:" << endl;
@@ -68,6 +71,7 @@ cin >> newNode->idNumber;
 return newNode;
 }
 
+//searches the linkedlist looking for the node that has the ID given as a parameter
 Node *LinkedList::searchLocation(int ID){
 Node *SearchNode = new Node();
 Node *prevNode = new Node();
