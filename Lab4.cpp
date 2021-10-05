@@ -5,6 +5,7 @@ using namespace std;
 
 int main(){
     LinkedList newList;
+    //sentinel value that keeps the loop going until it equals 5
     int sentinel = 1;
     int ID;
     while(sentinel != 5){
